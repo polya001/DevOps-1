@@ -20,3 +20,7 @@ def divide(x, y):
     if y == 0:
         return "ERROR"
     return x / y
+
+def power(x, y):
+    """Exponentiation function"""
+    return x ** y
