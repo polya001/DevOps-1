@@ -2,9 +2,9 @@ name: Build and Release
 
 on:
   push:
-    tags:
-      - 'v*'  
-  workflow_dispatch:  
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ] 
 
 jobs:
   build:
@@ -17,11 +17,12 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.x  
+        python-version: 3.9  
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install pyinstaller
         pip install -r requirements.txt
 
     - name: Build binary
@@ -47,5 +48,5 @@ jobs:
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./dist/your_script.bin
-        asset_name: your_script.bin
+        asset_name: calc_functions.bin
         asset_content_type: application/octet-stream
