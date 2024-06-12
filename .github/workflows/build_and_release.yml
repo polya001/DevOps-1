@@ -28,7 +28,7 @@ jobs:
     - name: Build binary
       run: |
         pyinstaller --onefile calc_functions.py  
-        mv dist/your_script dist/calc_functions.bin
+        mv dist/calc_functions dist/calc_functions.bin
 
     - name: Create release
       id: create_release
