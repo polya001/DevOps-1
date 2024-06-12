@@ -23,5 +23,5 @@ jobs:
 
       - name: Build and push
         run: |
-          docker buildx build --push --platform linux/amd64 -t ${{ secrets.DOCKERHUB_USERNAME }}/build-conteiner:latest .
+          docker buildx build --push --platform linux/amd64 -t ${{ secrets.DOCKER_NAME }}/buildconteiner:latest .
 
