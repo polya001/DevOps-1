@@ -24,7 +24,3 @@ def divide(x, y):
 def power(x, y):
     """Exponentiation function"""
     return x ** y
-
-def sqrt(x):
-    """Square root function"""
-    return x ** 0.5
